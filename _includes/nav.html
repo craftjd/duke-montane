@@ -1,14 +1,8 @@
 <!-- ========== HEADER ========== -->
 <header id="header" class="site-header navbar-expand-lg" role="banner">
   <div class="site-header__inner container">
-    <a class="site-header__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-      <img
-        class="site-header__logo"
-        src="{{ 'assets/img/' | append: site.logo | relative_url }}"
-        alt="{{ site.title }}"
-        width="160"
-        height="32"
-      >
+    <a class="site-header__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.full_title }} home">
+      <span class="site-header__brand-name">{{ site.full_title }}</span>
     </a>
 
     <button
