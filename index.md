@@ -7,7 +7,7 @@ header:
     Insurance, investing, and retirement strategies for families across Alberta and British Columbia.
   highlights:
     - Since 1984
-    - Father & son
+    - Decades of experience
     - AB & BC licensed
 
 sections:
