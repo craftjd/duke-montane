@@ -6,7 +6,7 @@ The site provides information about insurance planning, retirement planning, inv
 
 ## Live site
 
-- **Production:** https://dukemontane.com
+- **Production:** [https://dukemontane.com](https://dukemontane.com)
 - **Hosting:** GitHub Pages (deployed from the `gh-pages` branch)
 
 ## Technology
@@ -39,7 +39,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open http://localhost:4000 in your browser. Jekyll will rebuild the site when files are saved.
+Then open [http://localhost:4000](http://localhost:4000) in your browser. Jekyll will rebuild the site when files are saved.
 
 For automatic browser refresh during development:
 
@@ -53,13 +53,15 @@ bundle exec jekyll serve --livereload
 
 Most day-to-day edits can be made without touching layout code.
 
-| What to change | Where |
-|----------------|-------|
-| Navigation links | `_data/menus.yml` |
-| Homepage hero and story sections | `index.md` |
-| Page content | The corresponding `.md` file (e.g. `about-us.md`) |
-| Site title, URL, and metadata | `_config.yml` |
-| Header and footer | `_includes/nav.html`, `_includes/footer.html` |
+
+| What to change                   | Where                                             |
+| -------------------------------- | ------------------------------------------------- |
+| Navigation links                 | `_data/menus.yml`                                 |
+| Homepage hero and story sections | `index.md`                                        |
+| Page content                     | The corresponding `.md` file (e.g. `about-us.md`) |
+| Site title, URL, and metadata    | `_config.yml`                                     |
+| Header and footer                | `_includes/nav.html`, `_includes/footer.html`     |
+
 
 Pages use front matter at the top of each Markdown file to select a layout and define sections. The homepage uses the `home` layout; other pages typically use the `page` layout.
 
@@ -68,10 +70,6 @@ Pages use front matter at the top of each Markdown file to select a layout and d
 Changes pushed to the `gh-pages` branch are built and published by GitHub Pages. After pushing, allow a minute or two for the live site to update.
 
 The custom domain is configured via `CNAME` and should remain pointed at GitHub Pages DNS settings.
-
-## A note on respect and care
-
-This site represents a long-standing practice built on trust, listening, and thoughtful financial guidance. When making updates, please keep language clear, accurate, and considerate of the clients and communities Duke Montane serves.
 
 ## License
 
