@@ -38,23 +38,35 @@
 
   // Reveal sections as they enter the viewport
   var revealElements = document.querySelectorAll('.reveal');
-  if (revealElements.length && 'IntersectionObserver' in window) {
+  var showReveal = function(element) {
+    element.classList.add('is-visible');
+  };
+  var isRevealInView = function(element) {
+    var rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+  };
+
+  if (!revealElements.length) {
+    // No reveal targets on this page.
+  } else if (!('IntersectionObserver' in window)) {
+    revealElements.forEach(showReveal);
+  } else {
     var revealObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
         if (!entry.isIntersecting) {
           return;
         }
-        entry.target.classList.add('is-visible');
+        showReveal(entry.target);
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
 
     revealElements.forEach(function(element) {
+      if (isRevealInView(element)) {
+        showReveal(element);
+        return;
+      }
       revealObserver.observe(element);
-    });
-  } else {
-    revealElements.forEach(function(element) {
-      element.classList.add('is-visible');
     });
   }
 
