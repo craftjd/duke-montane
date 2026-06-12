@@ -33,7 +33,7 @@
 {% seo %}
 </head>
 
-<body id="page-top" class="{% if page.layout == site.landing_template %}landing {% endif %} min-vh-100 d-flex flex-column">
+<body id="page-top" class="{% if page.layout == site.landing_template %}landing {% endif %}{% if page.layout == 'home' or page.layout == 'page' %} has-hero{% endif %} min-vh-100 d-flex flex-column">
   {% include nav.html    section=section site=site page=page %}
   {{ content }}
   {% include footer.html section=section site=site page=page %}
