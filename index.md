@@ -1,19 +1,19 @@
 ---
 layout: home
 header:
-  eyebrow: Alberta & British Columbia
-  title: Leaders in financial security, planning, and growth
+  eyebrow: Second-generation · Family-owned
+  title: We listen first, then plan with you
   text: >
-    Serving the areas of Alberta and British Columbia
+    Insurance, investing, and retirement strategies for families across Alberta and British Columbia.
   highlights:
     - Since 1984
-    - Alberta & BC
-    - Family-owned
+    - Father & son
+    - AB & BC licensed
 
 sections:
   - type: home-story.html
     classes: home-story--section
-    tagline: The discussions you want — the answers you need.
+    tagline: Understanding your values before the numbers.
     overview: >
       <p>Duke Montane Financial Inc. exists to ensure clients have an optimal approach to investing and financial security.</p>
       <p>As a client, you will continually experience the diligent navigation of the financial world to keep your hard-earned and wisely-saved money providing you a better means to live.</p>

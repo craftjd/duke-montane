@@ -255,22 +255,20 @@ header.pagehead {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: calc(100svh - var(--header-height));
-  padding-top: calc(var(--header-height) + 3rem);
-  padding-bottom: 4.5rem;
+  min-height: clamp(20rem, 52vh, 30rem);
+  padding-top: calc(var(--header-height) + 1.75rem);
+  padding-bottom: 2.75rem;
   overflow: hidden;
   background: none;
 }
 
 .home-hero__media {
   position: absolute;
-  inset: -4%;
+  inset: 0;
   background-image: url("../img/bg-masthead.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  animation: home-hero-drift 24s ease-in-out infinite alternate;
-  will-change: transform;
 }
 
 .home-hero__overlay {
@@ -341,7 +339,7 @@ header.pagehead {
 .home-hero__scroll {
   position: absolute;
   left: 50%;
-  bottom: 1.5rem;
+  bottom: 1rem;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -466,11 +464,6 @@ header.pagehead {
 .reveal--delay-3 { transition-delay: 0.3s; }
 .reveal--delay-4 { transition-delay: 0.4s; }
 
-@keyframes home-hero-drift {
-  from { transform: scale(1) translate3d(0, 0, 0); }
-  to { transform: scale(1.05) translate3d(0, -1.25%, 0); }
-}
-
 @keyframes home-hero-scroll {
   0%, 100% { transform: scaleY(0.55); transform-origin: top; opacity: 0.45; }
   50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
@@ -490,7 +483,6 @@ header.pagehead {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-hero__media,
   .home-hero__scroll-line {
     animation: none;
   }
