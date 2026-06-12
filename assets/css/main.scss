@@ -241,7 +241,262 @@ header.pagehead {
   padding-top: calc(10rem + var(--header-height));
 }
 
-header.masthead {
+.home-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: calc(100svh - var(--header-height));
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 4.5rem;
+  overflow: hidden;
+  background: none;
+}
+
+.home-hero__media {
+  position: absolute;
+  inset: -4%;
+  background-image: url("../img/bg-masthead.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: home-hero-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(15, 23, 42, 0.72) 0%, rgba(39, 107, 136, 0.28) 45%, rgba(15, 23, 42, 0.78) 100%);
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 44rem;
+}
+
+.home-hero__eyebrow {
+  margin: 0 0 1rem;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.home-hero__title {
+  margin: 0 0 1.25rem;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: #fff;
+}
+
+.home-hero__lead {
+  margin: 0 0 1.75rem;
+  max-width: 34rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.home-hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-hero__highlights li {
+  padding: 0.4rem 0.85rem;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.home-hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2.75rem;
+  transform: translateX(-50%);
+  text-decoration: none;
+}
+
+.home-hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.75));
+  animation: home-hero-scroll 2.2s ease-in-out infinite;
+}
+
+.home-story--section {
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+}
+
+.home-story__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.home-story__tagline {
+  margin: 0;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--nav-ink);
+}
+
+.home-story__panels {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.home-story__panel {
+  padding: 1.5rem 1.5rem 1.35rem;
+  border: 1px solid var(--nav-border);
+  border-radius: 1rem;
+  background: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.home-story__panel:hover {
+  border-color: rgba(39, 107, 136, 0.22);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transform: translateY(-2px);
+}
+
+.home-story__label {
+  margin: 0 0 0.85rem;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nav-brand);
+}
+
+.home-story__body p:last-child {
+  margin-bottom: 0;
+}
+
+.home-story__body p {
+  color: var(--nav-ink-muted);
+  line-height: 1.7;
+}
+
+.home-story__timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-story__timeline-item {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--nav-border);
+}
+
+.home-story__timeline-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.home-story__year {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--nav-brand);
+}
+
+.home-story__timeline-text {
+  margin: 0;
+  color: var(--nav-ink-muted);
+  line-height: 1.65;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+.reveal--delay-4 { transition-delay: 0.4s; }
+
+@keyframes home-hero-drift {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.05) translate3d(0, -1.25%, 0); }
+}
+
+@keyframes home-hero-scroll {
+  0%, 100% { transform: scaleY(0.55); transform-origin: top; opacity: 0.45; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+}
+
+@media (min-width: 992px) {
+  .home-story__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .home-story__aside {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__media,
+  .home-hero__scroll-line {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .home-story__panel:hover {
+    transform: none;
+  }
+}
+
+header.masthead:not(.home-hero) {
   background: linear-gradient(
       to bottom,
       rgba(92, 77, 66, 0.2) 0%,
@@ -265,14 +520,14 @@ header.pagehead {
   background-attachment: scroll;
   background-size: cover;
 }
-header.masthead .logo {
+header.masthead:not(.home-hero) .logo {
   max-width: 20rem;
 }
-header.masthead h1 {
+header.masthead:not(.home-hero) h1 {
   font-size: 1.25rem;
 }
 @media (min-width: 992px) {
-  header.masthead p {
+  header.masthead:not(.home-hero) p {
     font-size: 1.15rem;
   }
 }

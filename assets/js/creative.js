@@ -36,6 +36,28 @@
   headerScroll();
   $(window).scroll(headerScroll);
 
+  // Reveal sections as they enter the viewport
+  var revealElements = document.querySelectorAll('.reveal');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    revealElements.forEach(function(element) {
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach(function(element) {
+      element.classList.add('is-visible');
+    });
+  }
+
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',

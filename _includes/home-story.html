@@ -1,0 +1,30 @@
+<section id="home-story" class="home-story {{ section.classes }}">
+  <div class="container">
+    <div class="home-story__grid">
+      <aside class="home-story__aside reveal">
+        <h2 class="home-story__tagline">{{ section.tagline }}</h2>
+      </aside>
+
+      <div class="home-story__panels">
+        <article class="home-story__panel reveal">
+          <p class="home-story__label">Overview</p>
+          <div class="home-story__body">
+            {{ section.overview }}
+          </div>
+        </article>
+
+        <article class="home-story__panel reveal reveal--delay-1">
+          <p class="home-story__label">History</p>
+          <ol class="home-story__timeline">
+            {% for event in section.history %}
+              <li class="home-story__timeline-item">
+                <span class="home-story__year">{{ event.year }}</span>
+                <p class="home-story__timeline-text">{{ event.text }}</p>
+              </li>
+            {% endfor %}
+          </ol>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
